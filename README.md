@@ -1,72 +1,51 @@
-# DevMetrics Dashboard
+# 📊 DevMetrics Dashboard
 
-> Um painel para acompanhar a evolução dos meus projetos de desenvolvimento em um único lugar.
+> Dashboard desenvolvido com React e TypeScript para acompanhar métricas de projetos de desenvolvimento e evoluir progressivamente para dados reais da API do GitHub.
 
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![CSS](https://img.shields.io/badge/Style-CSS3-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
-[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-F59E0B)](#roadmap)
+## 🚀 Sobre o projeto
 
-## Sobre o projeto
+O **DevMetrics Dashboard** é uma aplicação web criada para centralizar indicadores de desenvolvimento em uma interface simples, responsiva e reutilizável.
 
-O **DevMetrics Dashboard** é uma aplicação web construída para transformar atividade de desenvolvimento em uma visão rápida, organizada e útil para acompanhamento de projetos.
+A primeira versão foi construída com **React + TypeScript** e utiliza dados mockados para validar a estrutura visual, a componentização, os contratos de dados e a experiência do dashboard antes da integração com serviços externos.
 
-Esta primeira versão apresenta uma interface responsiva com métricas, variações percentuais e uma lista de projetos recentes. Os dados exibidos atualmente são mockados e tipados; a próxima grande evolução será conectá-los à API do GitHub para refletir o estado real dos repositórios.
+O objetivo das próximas versões é substituir gradualmente os dados simulados por informações reais de repositórios, commits, issues e outras atividades obtidas por meio da **GitHub API**.
 
-## O que já está funcionando
+> **Estado atual:** a interface principal está funcional, mas as métricas e projetos exibidos ainda são dados simulados.
 
-- Layout responsivo para desktop e dispositivos móveis.
-- Header com identificação do produto e usuário.
-- Sidebar com navegação visual para as áreas do dashboard.
-- Cards reutilizáveis para métricas de projetos, commits, issues e deploys.
-- Indicadores de crescimento, queda e estado neutro.
-- Lista de projetos recentes com status e data da última atualização.
-- Dados organizados por interfaces TypeScript (`Project`, `MetricCardData`, `DashboardData` e `SidebarItem`).
+## ✅ Funcionalidades atuais
 
-## Preview da experiência
+* Layout de dashboard responsivo
+* Header e Sidebar separados em componentes
+* Cards reutilizáveis para métricas
+* Métricas de projetos, commits, issues e deploys
+* Indicadores de crescimento, queda e estado neutro
+* Listagem de projetos recentes
+* Renderização dinâmica de dados com `.map()`
+* Tipagem das estruturas principais com TypeScript
+* Separação entre componentes, dados, páginas e tipos
 
-O dashboard atual contém quatro indicadores principais:
+## 🧠 Conceitos praticados
 
-| Indicador | Objetivo |
-| --- | --- |
-| Total de projetos | Acompanhar a quantidade de projetos monitorados |
-| Commits | Visualizar volume recente de contribuições |
-| Issues abertas | Identificar pendências que precisam de atenção |
-| Deploys | Acompanhar a frequência de entregas |
+* Componentização em React
+* Props tipadas
+* Interfaces TypeScript
+* Renderização de listas
+* Reutilização de componentes
+* Organização de dados mockados
+* Separação de responsabilidades
+* CSS Grid e Flexbox
+* Design responsivo
+* Estrutura preparada para consumo futuro de API REST
 
-## Tecnologias
+## 🛠️ Tecnologias
 
-- React 19
-- TypeScript 4.9
-- React Scripts 5
-- CSS responsivo
-- Create React App
+* React 19
+* TypeScript 4.9
+* CSS3
+* React Scripts / Create React App
+* Git e GitHub
 
-## Como executar localmente
-
-### Pré-requisitos
-
-- Node.js 18 ou superior
-- npm
-
-### Instalação
-
-```bash
-git clone https://github.com/lfbond/devmetrics_dashboard.git
-cd devmetrics_dashboard
-npm install
-npm start
-```
-
-O projeto será aberto em `http://localhost:3000`.
-
-Para gerar a versão de produção:
-
-```bash
-npm run build
-```
-
-## Estrutura do projeto
+## 📁 Estrutura
 
 ```text
 src/
@@ -75,53 +54,112 @@ src/
 │   ├── MetricCard/
 │   ├── RecentProjects/
 │   └── Sidebar/
-├── data/              # Dados mockados da versão atual
-├── pages/Dashboard/   # Composição da tela principal
-├── types/             # Contratos TypeScript
+├── data/
+│   └── dashboard.ts
+├── pages/
+│   └── Dashboard/
+├── types/
+│   └── dashboard.ts
 ├── App.tsx
-└── index.js
+├── App.css
+├── index.js
+└── index.css
 ```
 
-## Roadmap
+## 📊 Métricas
 
-### Próxima etapa: integração com a API do GitHub
+| Métrica           | Objetivo                                      |
+| ----------------- | --------------------------------------------- |
+| Total de projetos | Exibir a quantidade de projetos monitorados   |
+| Commits           | Representar o volume recente de contribuições |
+| Issues abertas    | Destacar pendências dos projetos              |
+| Deploys           | Representar entregas/publicações realizadas   |
 
-A próxima evolução do projeto é substituir os dados mockados por dados reais dos meus repositórios no GitHub. A integração será planejada para:
+Atualmente esses valores são **mockados** e servem para validar a experiência da aplicação.
 
-1. Configurar o usuário ou organização monitorada por variável de ambiente.
-2. Consumir repositórios, commits, issues, pull requests, releases e workflows.
-3. Mapear a resposta da API para os contratos internos do dashboard.
-4. Calcular métricas por período e exibir a data real da última sincronização.
-5. Adicionar estados de carregamento, erro, vazio e limite de requisições.
-6. Implementar cache e atualização controlada para reduzir chamadas à API.
-7. Exibir links diretos para os repositórios e atividades no GitHub.
+## ▶️ Como executar
 
-### Evoluções planejadas
+```bash
+git clone https://github.com/lfbond/devmetrics_dashboard.git
+cd devmetrics_dashboard
+npm install
+npm start
+```
 
-- Gráficos de commits, issues e deploys ao longo do tempo.
-- Filtros por período, repositório e status.
-- Página detalhada para cada projeto.
-- Autenticação segura com GitHub OAuth, quando necessária.
-- Testes unitários e de componentes.
-- Pipeline de CI para lint, testes e build.
-- Deploy da aplicação em uma plataforma pública.
+Para gerar a versão de produção:
 
-## Objetivos técnicos
+```bash
+npm run build
+```
 
-Além de acompanhar projetos, este repositório demonstra práticas que fazem parte do meu processo de desenvolvimento:
+## 🗺️ Roadmap
 
-- Componentização e reaproveitamento de UI.
-- Tipagem explícita para reduzir erros de integração.
-- Separação entre dados, componentes, páginas e tipos.
-- Responsividade e foco em uma experiência de leitura rápida.
-- Evolução incremental, começando por uma base funcional e preparada para dados reais.
+### Fase 1 — Base do Dashboard ✅
 
-## Status
+* [x] Criar projeto React + TypeScript
+* [x] Criar layout principal
+* [x] Criar Header e Sidebar
+* [x] Criar componente reutilizável de métricas
+* [x] Renderizar métricas a partir de dados tipados
+* [x] Criar listagem de projetos recentes
+* [x] Implementar responsividade inicial
 
-🚧 Projeto em desenvolvimento. A interface inicial está pronta com dados mockados; a integração com a API do GitHub é a próxima entrega principal.
+### Fase 2 — Refinamento da interface
 
-## Autor
+* [ ] Substituir projetos fictícios por projetos reais do portfólio
+* [ ] Melhorar semântica e acessibilidade da navegação
+* [ ] Adicionar estados de foco para teclado
+* [ ] Remover arquivos padrão não utilizados do CRA
+* [ ] Converter `index.js` para `index.tsx`
+* [ ] Adicionar gráfico de atividade
+* [ ] Criar filtros por período/projeto
+* [ ] Melhorar comportamento mobile da Sidebar
+
+### Fase 3 — GitHub API
+
+* [ ] Criar camada de serviços para comunicação com a API
+* [ ] Buscar repositórios reais
+* [ ] Obter métricas de commits e issues
+* [ ] Mapear respostas externas para os tipos internos
+* [ ] Implementar loading, erro e estado vazio
+* [ ] Tratar limite de requisições
+* [ ] Exibir data real da última sincronização
+* [ ] Adicionar links para os repositórios
+
+### Fase 4 — Qualidade
+
+* [ ] Adicionar testes de componentes
+* [ ] Configurar lint
+* [ ] Criar pipeline de CI para testes e build
+* [ ] Publicar a aplicação
+* [ ] Adicionar screenshot e demonstração ao README
+
+### Fase 5 — Futuro
+
+* [ ] Página detalhada por projeto
+* [ ] Histórico de atividade
+* [ ] Novas métricas e visualizações
+* [ ] GitHub OAuth caso o escopo exija autenticação
+
+## 🎯 Próxima entrega
+
+Antes da integração com a GitHub API:
+
+1. substituir projetos fictícios por projetos reais;
+2. melhorar acessibilidade da Sidebar;
+3. converter o entrypoint para TypeScript;
+4. adicionar o primeiro gráfico;
+5. publicar a aplicação;
+6. então iniciar a integração com dados reais.
+
+## 📌 Status
+
+🚧 **Em desenvolvimento.**
+
+A primeira interface está pronta e funcional com dados mockados. O próximo marco é o refinamento da V1 seguido da integração com dados reais.
+
+## 👨‍💻 Autor
 
 Desenvolvido por **Luís Felipe Bond**.
 
-- GitHub: [@lfbond](https://github.com/lfbond)
+GitHub: @lfbond
