@@ -18,16 +18,16 @@ export const mockMetrics: MetricCardData[] = [
     change: 8.2,
     changeType: 'increase'
   },
-  {
+  /* {
     id: '3',
     title: 'Issues Abertas',
     value: 34,
     icon: '🐛',
     change: -5.1,
     changeType: 'decrease'
-  },
+  }, */
   {
-    id: '4',
+    id: '3',
     title: 'Deploys',
     value: 89,
     icon: '🚀',
@@ -41,30 +41,30 @@ export const mockProjects: Project[] = [
   {
     id: 'p1',
     name: 'DevMetrics Dashboard',
-    description: 'Dashboard para métricas de desenvolvimento',
+    description: 'Dashboard de métricas de desenvolvimento com React e TypeScript',
     status: 'active',
-    lastUpdate: '2026-09-02T10:30:00'
+    lastUpdate: '2026-09-03T12:00:00'
   },
   {
     id: 'p2',
-    name: 'E-commerce API',
-    description: 'API REST para plataforma de e-commerce',
-    status: 'active',
-    lastUpdate: '2026-09-01T15:45:00'
+    name: 'DT Money',
+    description: 'Aplicação para gerenciamento e acompanhamento de transações financeiras',
+    status: 'completed',
+    lastUpdate: '2026-08-30T12:00:00'
   },
   {
     id: 'p3',
-    name: 'Mobile App',
-    description: 'Aplicativo mobile cross-platform',
-    status: 'on-hold',
-    lastUpdate: '2026-08-30T09:20:00'
+    name: 'Pokémon List',
+    description: 'Aplicação Front-end para consulta e exibição de Pokémon',
+    status: 'completed',
+    lastUpdate: '2026-08-28T12:00:00'
   },
   {
     id: 'p4',
-    name: 'Migration System',
-    description: 'Sistema de migração de dados legados',
+    name: 'Landing Page DNC',
+    description: 'Landing page responsiva desenvolvida para prática de interfaces modernas',
     status: 'completed',
-    lastUpdate: '2026-08-28T14:10:00'
+    lastUpdate: '2026-08-26T12:00:00'
   }
 ];
 

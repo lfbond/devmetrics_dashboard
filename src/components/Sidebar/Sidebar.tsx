@@ -8,20 +8,28 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   return (
-    <aside className="sidebar">
-      <div className="sidebar-menu">
+    <aside className="sidebar" aria-label="Navegação principal">
+      <nav className="sidebar-menu">
         {items.map((item) => (
-          <div
+          <button
             key={item.id}
+            type="button"
             className={`sidebar-item ${item.active ? 'active' : ''}`}
+            aria-current={item.active ? 'page' : undefined}
           >
-            <span className="sidebar-icon">{item.icon}</span>
-            <span className="sidebar-label">{item.label}</span>
-          </div>
+            <span className="sidebar-icon" aria-hidden="true">
+              {item.icon}
+            </span>
+
+            <span className="sidebar-label">
+              {item.label}
+            </span>
+          </button>
         ))}
-      </div>
+      </nav>
+
       <div className="sidebar-footer">
-        <div className="sidebar-version">v1.0.0</div>
+        <span className="sidebar-version">v1.0.0</span>
       </div>
     </aside>
   );
