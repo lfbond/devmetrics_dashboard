@@ -9,7 +9,7 @@ const Analytics: React.FC = () => {
     <div className="analytics">
       <div className="analytics-header">
         <div>
-          <h2>Analytics</h2>
+          <h2>Analítico</h2>
 
           <p>
             Acompanhe a atividade e evolução dos projetos.

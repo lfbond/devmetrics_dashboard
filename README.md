@@ -1,165 +1,146 @@
-# 📊 DevMetrics Dashboard
+# DevMetrics Dashboard
 
-> Dashboard desenvolvido com React e TypeScript para acompanhar métricas de projetos de desenvolvimento e evoluir progressivamente para dados reais da API do GitHub.
+> Painel web para acompanhar a atividade e a evolução de projetos de desenvolvimento.
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-f59e0b)
+![React](https://img.shields.io/badge/React-19-61dafb?logo=react&logoColor=20232a)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.9-3178c6?logo=typescript&logoColor=ffffff)
 
-## 🚀 Sobre o projeto
+## Visão geral
 
-O **DevMetrics Dashboard** é uma aplicação web criada para centralizar indicadores de desenvolvimento em uma interface simples, responsiva e reutilizável.
+O **DevMetrics Dashboard** é uma aplicação React criada para centralizar indicadores de desenvolvimento em uma interface objetiva, responsiva e componentizada. A versão atual valida a experiência visual, a navegação e os contratos de dados com informações mockadas, preparando a base para uma futura integração com a GitHub API.
 
-A primeira versão foi construída com **React + TypeScript** e utiliza dados mockados para validar a estrutura visual, a componentização, os contratos de dados e a experiência do dashboard antes da integração com serviços externos.
+## Status atual
 
-O objetivo das próximas versões é substituir gradualmente os dados simulados por informações reais de repositórios, commits, issues e outras atividades obtidas por meio da **GitHub API**.
+**Em desenvolvimento.** A primeira versão funcional está disponível com dados locais e contempla as páginas Dashboard e Analytics. Ainda não há integração com a GitHub API, autenticação ou persistência de dados.
 
-> **Estado atual:** a interface principal está funcional, mas as métricas e projetos exibidos ainda são dados simulados.
+## Demonstração visual
 
-## ✅ Funcionalidades atuais
+Adicione as capturas de tela em `docs/screenshots/` para documentar a evolução da interface. Os nomes abaixo já estão reservados para uso no README:
 
-* Layout de dashboard responsivo
-* Header e Sidebar separados em componentes
-* Cards reutilizáveis para métricas
-* Métricas de projetos, commits, issues e deploys
-* Indicadores de crescimento, queda e estado neutro
-* Listagem de projetos recentes
-* Renderização dinâmica de dados com `.map()`
-* Tipagem das estruturas principais com TypeScript
-* Separação entre componentes, dados, páginas e tipos
+| Tela | Arquivo | Conteúdo |
+| --- | --- | --- |
+| Dashboard | `docs/screenshots/dashboard.png` | Métricas e projetos recentes |
+| Analytics | `docs/screenshots/analytics.png` | Atividade de commits dos últimos sete dias |
 
-## 🧠 Conceitos praticados
+<!-- Remova este comentário quando os arquivos estiverem disponíveis:
+<p align="center">
+	<img src="docs/screenshots/dashboard.png" alt="Dashboard principal" width="800">
+</p>
+<p align="center">
+	<img src="docs/screenshots/analytics.png" alt="Página de Analytics" width="800">
+</p>
+-->
 
-* Componentização em React
-* Props tipadas
-* Interfaces TypeScript
-* Renderização de listas
-* Reutilização de componentes
-* Organização de dados mockados
-* Separação de responsabilidades
-* CSS Grid e Flexbox
-* Design responsivo
-* Estrutura preparada para consumo futuro de API REST
+## Funcionalidades implementadas
 
-## 🛠️ Tecnologias
+- Layout responsivo com Header, Sidebar e área de conteúdo.
+- Dashboard com cards de Total de Projetos, Commits e Deploys.
+- Indicadores de variação das métricas.
+- Lista de projetos recentes com status, descrição e última atualização.
+- Página de Analytics com gráfico de linha responsivo.
+- Navegação lateral com indicação da rota ativa.
+- Componentes reutilizáveis e dados tipados com TypeScript.
 
-* React 19
-* TypeScript 4.9
-* CSS3
-* React Scripts / Create React App
-* Git e GitHub
+### Limitações conhecidas
 
-## 📁 Estrutura
+Os dados exibidos estão centralizados em `src/data/dashboard.ts` e são exclusivamente mockados. As opções **Projetos** e **Configurações** aparecem na navegação, mas ainda não possuem páginas implementadas.
+
+## Tecnologias
+
+- React 19
+- TypeScript 4.9
+- React Router DOM 7
+- Recharts 3
+- CSS3 com Grid, Flexbox e media queries
+- Create React App via React Scripts
+
+## Estrutura do projeto
 
 ```text
 src/
 ├── components/
-│   ├── Header/
-│   ├── MetricCard/
-│   ├── RecentProjects/
-│   └── Sidebar/
+│   ├── ActivityChart/     # Gráfico de atividade
+│   ├── Header/            # Cabeçalho da aplicação
+│   ├── MetricCard/        # Cards de métricas
+│   ├── RecentProjects/    # Projetos recentes
+│   └── Sidebar/           # Navegação lateral
 ├── data/
-│   └── dashboard.ts
+│   └── dashboard.ts       # Dados mockados do dashboard
 ├── pages/
-│   └── Dashboard/
-├── types/
-│   └── dashboard.ts
-├── App.tsx
-├── App.css
-├── index.js
-└── index.css
-```
-
-## 📊 Métricas
-
-| Métrica           | Objetivo                                      |
-| ----------------- | --------------------------------------------- |
-| Total de projetos | Exibir a quantidade de projetos monitorados   |
-| Commits           | Representar o volume recente de contribuições |
-| Issues abertas    | Destacar pendências dos projetos              |
-| Deploys           | Representar entregas/publicações realizadas   |
-
-Atualmente esses valores são **mockados** e servem para validar a experiência da aplicação.
-
-## ▶️ Como executar
-
-```bash
-git clone https://github.com/lfbond/devmetrics_dashboard.git
-cd devmetrics_dashboard
+│   ├── Analytics/         # Página de análises
+│   └── Dashboard/         # Página principal
 npm install
 npm start
 ```
 
-Para gerar a versão de produção:
+A aplicacao ficara disponivel em `http://localhost:3000`.
+
+### Build de producao
 
 ```bash
 npm run build
 ```
 
-## 🗺️ Roadmap
+### Testes
+
+```bash
+npm test
+```
+
+## Roadmap
 
 ### Fase 1 — Base do Dashboard ✅
 
-* [x] Criar projeto React + TypeScript
-* [x] Criar layout principal
-* [x] Criar Header e Sidebar
-* [x] Criar componente reutilizável de métricas
-* [x] Renderizar métricas a partir de dados tipados
-* [x] Criar listagem de projetos recentes
-* [x] Implementar responsividade inicial
+- [x] Criar o projeto React com TypeScript.
+- [x] Criar o layout principal.
+- [x] Criar Header e Sidebar.
+- [x] Criar componente reutilizável de métricas.
+- [x] Renderizar métricas a partir de dados tipados.
+- [x] Criar a listagem de projetos recentes.
+- [x] Implementar a responsividade inicial.
 
-### Fase 2 — Refinamento da interface
+### Fase 2 — Refinamento da interface ✅
 
-* [ ] Substituir projetos fictícios por projetos reais do portfólio
-* [ ] Melhorar semântica e acessibilidade da navegação
-* [ ] Adicionar estados de foco para teclado
-* [ ] Remover arquivos padrão não utilizados do CRA
-* [ ] Converter `index.js` para `index.tsx`
-* [ ] Adicionar gráfico de atividade
-* [ ] Criar filtros por período/projeto
-* [ ] Melhorar comportamento mobile da Sidebar
+- [x] Implementar a navegação entre Dashboard e Analytics.
+- [x] Adicionar o gráfico de atividade de commits.
+- [x] Aplicar layout responsivo aos componentes da aplicação.
+- [x] Organizar a interface em componentes reutilizáveis.
+- [x] Estruturar a navegação lateral com indicação da rota ativa.
 
 ### Fase 3 — GitHub API
 
-* [ ] Criar camada de serviços para comunicação com a API
-* [ ] Buscar repositórios reais
-* [ ] Obter métricas de commits e issues
-* [ ] Mapear respostas externas para os tipos internos
-* [ ] Implementar loading, erro e estado vazio
-* [ ] Tratar limite de requisições
-* [ ] Exibir data real da última sincronização
-* [ ] Adicionar links para os repositórios
+- [ ] Criar a camada de serviços para comunicação com a API.
+- [ ] Buscar repositórios reais.
+- [ ] Obter métricas de commits e issues.
+- [ ] Mapear respostas externas para os tipos internos.
+- [ ] Implementar estados de carregamento, erro e lista vazia.
+- [ ] Tratar o limite de requisições.
+- [ ] Exibir a data real da última sincronização.
+- [ ] Adicionar links para os repositórios.
 
-### Fase 4 — Qualidade
+### Fase 4 — Qualidade e publicação
 
-* [ ] Adicionar testes de componentes
-* [ ] Configurar lint
-* [ ] Criar pipeline de CI para testes e build
-* [ ] Publicar a aplicação
-* [ ] Adicionar screenshot e demonstração ao README
+- [ ] Adicionar testes de componentes.
+- [ ] Configurar lint.
+- [ ] Criar pipeline de CI para testes e build.
+- [ ] Publicar a aplicação.
+- [ ] Adicionar screenshots e demonstração ao README.
 
-### Fase 5 — Futuro
+### Fase 5 — Evolução do produto
 
-* [ ] Página detalhada por projeto
-* [ ] Histórico de atividade
-* [ ] Novas métricas e visualizações
-* [ ] GitHub OAuth caso o escopo exija autenticação
+- [ ] Implementar a página detalhada por projeto.
+- [ ] Criar histórico de atividade.
+- [ ] Adicionar novas métricas e visualizações.
+- [ ] Criar filtros por período e projeto.
+- [ ] Implementar autenticação OAuth caso o escopo exija.
 
-## 🎯 Próxima entrega
+## Autor
 
-Antes da integração com a GitHub API:
+Desenvolvido por **Luis Felipe Bond**.
 
-1. substituir projetos fictícios por projetos reais;
-2. melhorar acessibilidade da Sidebar;
-3. converter o entrypoint para TypeScript;
-4. adicionar o primeiro gráfico;
-5. publicar a aplicação;
-6. então iniciar a integração com dados reais.
+- GitHub: [@lfbond](https://github.com/lfbond)
+- Repositorio: [lfbond/devmetrics_dashboard](https://github.com/lfbond/devmetrics_dashboard)
 
-## 📌 Status
+## Licenca
 
-🚧 **Em desenvolvimento.**
-
-A primeira interface está pronta e funcional com dados mockados. O próximo marco é o refinamento da V1 seguido da integração com dados reais.
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Luís Felipe Bond**.
-
-GitHub: @lfbond
+Este projeto esta disponivel sob a licenca definida no arquivo [LICENSE](LICENSE).

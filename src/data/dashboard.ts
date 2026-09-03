@@ -84,7 +84,7 @@ export const sidebarItems: SidebarItem[] = [
   },
   {
     id: 'analytics',
-    label: 'Analytics',
+    label: 'Analítico',
     icon: '📈',
     path: '/analytics'
   },
