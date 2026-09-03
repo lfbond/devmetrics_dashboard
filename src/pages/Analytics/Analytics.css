@@ -1,0 +1,23 @@
+.analytics {
+  width: 100%;
+}
+
+.analytics-header {
+  margin-bottom: 24px;
+}
+
+.analytics-header h2 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  color: #1f2937;
+}
+
+.analytics-header p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.analytics-content {
+  display: grid;
+  gap: 24px;
+}

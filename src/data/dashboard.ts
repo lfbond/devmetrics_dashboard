@@ -70,10 +70,30 @@ export const mockProjects: Project[] = [
 
 // Itens do sidebar
 export const sidebarItems: SidebarItem[] = [
-  { id: 'dashboard', label: 'Dashboard', icon: '📊', active: true },
-  { id: 'projects', label: 'Projetos', icon: '📁', active: false },
-  { id: 'analytics', label: 'Analytics', icon: '📈', active: false },
-  { id: 'settings', label: 'Configurações', icon: '⚙️', active: false }
+  {
+    id: 'dashboard',
+    label: 'Dashboard',
+    icon: '📊',
+    path: '/'
+  },
+  {
+    id: 'projects',
+    label: 'Projetos',
+    icon: '📁',
+    path: '/projects'
+  },
+  {
+    id: 'analytics',
+    label: 'Analytics',
+    icon: '📈',
+    path: '/analytics'
+  },
+  {
+    id: 'settings',
+    label: 'Configurações',
+    icon: '⚙️',
+    path: '/settings'
+  }
 ];
 
 // Dados completos do dashboard
