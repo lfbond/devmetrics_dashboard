@@ -17,19 +17,20 @@ O **DevMetrics Dashboard** é uma aplicação React criada para centralizar indi
 
 Adicione as capturas de tela em `docs/screenshots/` para documentar a evolução da interface. Os nomes abaixo já estão reservados para uso no README:
 
-| Tela | Arquivo | Conteúdo |
-| --- | --- | --- |
-| Dashboard | `docs/screenshots/dashboard.png` | Métricas e projetos recentes |
-| Analytics | `docs/screenshots/analytics.png` | Atividade de commits dos últimos sete dias |
 
-<!-- Remova este comentário quando os arquivos estiverem disponíveis:
-<p align="center">
-	<img src="docs/screenshots/dashboard.png" alt="Dashboard principal" width="800">
-</p>
-<p align="center">
-	<img src="docs/screenshots/analytics.png" alt="Página de Analytics" width="800">
-</p>
--->
+Dashboard 
+
+<img width="1616" height="911" alt="Img-01-Dashboard" src="https://github.com/user-attachments/assets/3fb405b4-1b96-4b7f-9bdf-f38a28796b90" />
+
+Métricas e projetos recentes
+
+
+Analytics
+
+<img width="1615" height="919" alt="Img-02-Dashboard-Analitcs" src="https://github.com/user-attachments/assets/2efed9dd-93f0-4f11-98e8-8ef852c7bb92" />
+
+Atividade de commits dos últimos sete dias
+
 
 ## Funcionalidades implementadas
 
